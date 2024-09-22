@@ -1,37 +1,29 @@
 import 'package:flutter/material.dart';
-import 'package:new_x/app/components/tweet.dart';
+import 'package:get/get.dart';
+import 'package:new_x/data/controllers/tweet_controller.dart';
+import 'package:new_x/app/components/tweet_card.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Column(
-        children: [
-          Tweet(
-            name: 'Pedro Lucas',
-            username: 'batatinha.ceo',
-            text: 'esse definitivamento é o meu último tweet da noite',
-          ),
-          Tweet(
-            name: 'Pedro Lucas',
-            username: 'batatinha.ceo',
-            text:
-                'Meu nome é Pedro Lucas e eu sou o dono do X. Comprei este aplicativo pois meu pai tem várias minas de esmeraldas.',
-          ),
-          Tweet(
-            name: 'Pedro Lucas',
-            username: 'batatinha.ceo',
-            text: 'esse app aqui não precisa de VPN haha',
-          ),
-        ],
-      ),
+    final TweetController tweetController = Get.put(TweetController());
+
+    return Scaffold(
+      body: Obx(() {
+        if (tweetController.tweets.isEmpty) {
+          return const Center(child: CircularProgressIndicator());
+        }
+
+        return ListView.builder(
+          itemCount: tweetController.tweets.length,
+          itemBuilder: (context, index) {
+            final tweet = tweetController.tweets[index];
+            return TweetCard(tweet: tweet);
+          },
+        );
+      }),
     );
   }
 }

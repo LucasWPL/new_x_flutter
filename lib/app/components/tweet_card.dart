@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:new_x/data/models/tweet.dart';
 
-class Tweet extends StatefulWidget {
-  final String name;
-  final String username;
-  final String text;
+class TweetCard extends StatefulWidget {
+  final Tweet tweet;
 
-  const Tweet({
+  const TweetCard({
     super.key,
-    required this.name,
-    required this.username,
-    required this.text,
+    required this.tweet,
   });
 
   @override
-  State<Tweet> createState() => _TweetState();
+  State<TweetCard> createState() => _TweetCardState();
 }
 
-class _TweetState extends State<Tweet> {
+class _TweetCardState extends State<TweetCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -30,8 +27,18 @@ class _TweetState extends State<Tweet> {
             ClipRRect(
               borderRadius: BorderRadius.circular(25),
               child: Image.asset(
-                'assets/images/avatar.png',
+                widget.tweet.profilePicturePath ??
+                    "assets/images/default_avatar.png",
                 height: 55,
+                width: 55,
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Container(
+                    color: Colors.grey,
+                    height: 55,
+                    width: 55,
+                  );
+                },
               ),
             ),
             const SizedBox(width: 10),
@@ -42,23 +49,24 @@ class _TweetState extends State<Tweet> {
                   Row(
                     children: [
                       Text(
-                        widget.name,
-                        style: TextStyle(
+                        widget.tweet.name,
+                        style: const TextStyle(
                           fontSize: 17,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(width: 5),
-                      Text('@${widget.username}'),
+                      const SizedBox(width: 5),
+                      Text('@${widget.tweet.username}'),
                     ],
                   ),
                   Text(
-                    widget.text,
-                    style: TextStyle(
+                    widget.tweet.text,
+                    style: const TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.w500,
                     ),
-                    overflow: TextOverflow.visible,
+                    maxLines: 3,
+                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),

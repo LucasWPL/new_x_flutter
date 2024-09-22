@@ -56,30 +56,13 @@ class _HubPageState extends State<HubPage> {
           unselectedItemColor: Colors.white.withOpacity(0.5),
           onTap: _onItemTapped,
           items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.search), label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.view_list), label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.people), label: ''),
+            BottomNavigationBarItem(icon: Icon(Icons.notifications), label: ''),
             BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.view_list),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.people),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.notifications),
-              label: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.indeterminate_check_box),
-              label: '',
-            ),
+                icon: Icon(Icons.indeterminate_check_box), label: ''),
           ],
         ),
       ],
