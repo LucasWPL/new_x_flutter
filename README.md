@@ -1,16 +1,12 @@
-# new_x
+# New X
 
-A new Flutter project.
+Este projeto foi desenvolvido para testar e aprimorar minhas habilidades com Flutter. A principal ideia foi aprimorar meu conhecimento sobre arquitetura e explorar widgets nativos do Flutter.
 
-## Getting Started
+## Objetivos do Projeto
 
-This project is a starting point for a Flutter application.
+- Aprimorar habilidades em Flutter.
+- Estudar e implementar boas práticas de arquitetura.
+- Explorar widgets nativos e suas funcionalidades.
+- Criar uma interface de usuário agradável e funcional.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Capturas de tela
