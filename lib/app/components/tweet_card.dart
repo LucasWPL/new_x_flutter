@@ -57,6 +57,9 @@ class _TweetCardState extends State<TweetCard> {
                       ),
                       const SizedBox(width: 5),
                       Text('@${widget.tweet.username}'),
+                      const SizedBox(width: 5),
+                      Text(
+                          '· ${widget.tweet.creationDate.month}/${widget.tweet.creationDate.year}')
                     ],
                   ),
                   Text(
@@ -67,7 +70,7 @@ class _TweetCardState extends State<TweetCard> {
                     ),
                     maxLines: 3,
                     overflow: TextOverflow.ellipsis,
-                  ),
+                  )
                 ],
               ),
             ),

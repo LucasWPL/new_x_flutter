@@ -28,9 +28,22 @@ class _HubPageState extends State<HubPage> {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Image.asset(
-          'assets/images/logo_dark.png',
-          height: 40,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.circular(25),
+              child: Image.asset(
+                'assets/images/avatar.png',
+                height: 30,
+              ),
+            ),
+            Image.asset(
+              'assets/images/logo_dark.png',
+              height: 40,
+            ),
+            const SizedBox(width: 30),
+          ],
         ),
       ),
       body: IndexedStack(
