@@ -10,3 +10,5 @@ Este projeto foi desenvolvido para testar e aprimorar minhas habilidades com Flu
 - Criar uma interface de usuário agradável e funcional.
 
 ## Capturas de tela
+
+<img src="https://github.com/user-attachments/assets/0c39c327-2a64-4b76-b439-210d506d1beb" width="400">
